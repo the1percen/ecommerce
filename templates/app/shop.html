@@ -23,8 +23,12 @@
 		<link href="static/https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 		<link href="static/css/tiny-slider.css" rel="stylesheet">
 		<link href="static/css/style.css" rel="stylesheet">
-		<title>Mafia Guns</title>
-		
+		<title>Furni</title>
+		<!--important-->
+		<script type="text/javascript">
+			var user = '{{request.user}}'
+		</script>
+
 	</head>
 
 	<body>
@@ -82,7 +86,6 @@
 			<div class="container">
 				<div class="row">
 					{% for product in products %}
-						<!-- Start Column 1 -->
 						<div class="col-12 col-md-4 col-lg-3 mb-5">
 							<a class="product-item" href="#">
 								<img src="{{product.imageURL}}" class="img-fluid product-thumbnail">
@@ -92,10 +95,13 @@
 									<img src="static/images/cross.svg" class="img-fluid">
 								</span>
 							</a>
+							<button class="btn btn-primary add-to-cart update-cart" data-product={{product.id}} data-action="add">Add to Cart</button>
 						</div>
 						<!-- End Column 1 -->
 					{% endfor %}
 				</div>
+			</div>
+		</div>
 			</div>
 		</div>
 		
@@ -218,6 +224,7 @@
 		<script src="static/js/bootstrap.bundle.min.js"></script>
 		<script src="static/js/tiny-slider.js"></script>
 		<script src="static/js/custom.js"></script>
+		<script src="static/js/cart.js"></script>
 	</body>
 
 </html>
